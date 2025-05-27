@@ -1,11 +1,14 @@
-// App.tsx
 import React, { useState } from "react";
 import ThaiNumbers from "./pages/numbers-test";
 import ThaiNumbers20 from "./pages/numbers-20";
 import ThaiNumbers20to100 from "./pages/numbers-100";
 import Places from "./pages/places";
-import PlacesTest from "./pages/places-test";
 import Pronouns from "./pages/pronouns";
+import Verbs1 from "./pages/verbs1";
+import PlacesQuiz from "./pages/places/quiz";
+import Verbs1Quiz from "./pages/verbs1/quiz";
+import SidebarMenu from "./shared/sidebar-menu";
+import { menuItems } from "./shared/data/data";
 
 type Screen =
   | "thaiNumbers20"
@@ -13,102 +16,30 @@ type Screen =
   | "thaiNumbers100"
   | "places"
   | "places-test"
-  | "pronouns"; // extend with more screens as needed
+  | "pronouns"
+  | "verbs1"
+  | "verbs1-quiz";
 
 const App: React.FC = () => {
   const [screen, setScreen] = useState<Screen>("thaiNumbers20");
 
   return (
     <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <div className="w-64 bg-blue-100 p-4 shadow-md">
-        <h2 className="text-lg font-bold text-blue-700 mb-3">Menu</h2>
-        <ul className="space-y-1">
-          {" "}
-          {/* less vertical spacing */}
-          <li>
-            <button
-              className={`cursor-pointer w-full text-left px-2 py-1 rounded text-sm ${
-                screen === "thaiNumbers20"
-                  ? "bg-blue-600 text-white"
-                  : "hover:bg-blue-200"
-              }`}
-              onClick={() => setScreen("thaiNumbers20")}
-            >
-              Numbers 0 - 20
-            </button>
-          </li>
-          <li>
-            <button
-              className={`cursor-pointer w-full text-left px-2 py-1 rounded text-sm ${
-                screen === "thaiNumbers100"
-                  ? "bg-blue-600 text-white"
-                  : "hover:bg-blue-200"
-              }`}
-              onClick={() => setScreen("thaiNumbers100")}
-            >
-              Numbers 20 - 100
-            </button>
-          </li>
-          <li>
-            <button
-              className={`cursor-pointer w-full text-left px-2 py-1 rounded text-sm ${
-                screen === "thaiNumbersTest"
-                  ? "bg-blue-600 text-white"
-                  : "hover:bg-blue-200"
-              }`}
-              onClick={() => setScreen("thaiNumbersTest")}
-            >
-              Numbers (Test)
-            </button>
-          </li>
-          <li>
-            <button
-              className={`cursor-pointer w-full text-left px-2 py-1 rounded text-sm ${
-                screen === "places"
-                  ? "bg-blue-600 text-white"
-                  : "hover:bg-blue-200"
-              }`}
-              onClick={() => setScreen("places")}
-            >
-              Places
-            </button>
-          </li>
-          <li>
-            <button
-              className={`cursor-pointer w-full text-left px-2 py-1 rounded text-sm ${
-                screen === "places-test"
-                  ? "bg-blue-600 text-white"
-                  : "hover:bg-blue-200"
-              }`}
-              onClick={() => setScreen("places-test")}
-            >
-              Places (test)
-            </button>
-          </li>
-          <li>
-            <button
-              className={`cursor-pointer w-full text-left px-2 py-1 rounded text-sm ${
-                screen === "pronouns"
-                  ? "bg-blue-600 text-white"
-                  : "hover:bg-blue-200"
-              }`}
-              onClick={() => setScreen("pronouns")}
-            >
-              Pronouns
-            </button>
-          </li>
-        </ul>
-      </div>
+      <SidebarMenu
+        items={menuItems}
+        activeItem={screen}
+        onChange={(e) => setScreen(e as Screen)}
+      />
 
-      {/* Main Content */}
       <div className="flex-1 bg-blue-50">
         {screen === "thaiNumbersTest" && <ThaiNumbers />}
         {screen === "thaiNumbers20" && <ThaiNumbers20 />}
         {screen === "thaiNumbers100" && <ThaiNumbers20to100 />}
         {screen === "places" && <Places />}
-        {screen === "places-test" && <PlacesTest />}
+        {screen === "places-test" && <PlacesQuiz />}
         {screen === "pronouns" && <Pronouns />}
+        {screen === "verbs1" && <Verbs1 />}
+        {screen === "verbs1-quiz" && <Verbs1Quiz />}
       </div>
     </div>
   );

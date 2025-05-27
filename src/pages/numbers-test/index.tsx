@@ -138,7 +138,7 @@ const ThaiNumbers: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-10">
+    <div className="flex flex-col items-center p-10 mx-4">
       <h1 className="text-4xl font-bold text-blue-700 mb-6">
         Thai Numbers Test
       </h1>
