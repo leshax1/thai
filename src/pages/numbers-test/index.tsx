@@ -28,10 +28,11 @@ const thaiTextWords: Record<number, string> = {
   10: "สิบ",
 };
 
-const ThaiNumbers: React.FC = () => {
+function ThaiNumbers() {
   const [range, setRange] = useState("1-10");
   const [number, setNumber] = useState<number | null>(null);
   const [revealed, setRevealed] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(false);
 
   const getRange = () => {
     const [min, max] = range.split("-").map(Number);
@@ -45,10 +46,13 @@ const ThaiNumbers: React.FC = () => {
     setRevealed(false);
   };
 
-  // Generate a number on initial component mount or whenever range changes
   useEffect(() => {
     generateNumber();
   }, [range]);
+
+  useEffect(() => {
+    setRevealed(showAnswer);
+  }, [showAnswer]);
 
   const toThaiNumerals = (n: number) => {
     return String(n)
@@ -158,6 +162,16 @@ const ThaiNumbers: React.FC = () => {
         <option value="1-9999">1 - 9999</option>
       </select>
 
+      <label className="mb-4 text-blue-800 font-semibold flex items-center space-x-2">
+        <input
+          type="checkbox"
+          checked={showAnswer}
+          onChange={(e) => setShowAnswer(e.target.checked)}
+          className="w-4 h-4"
+        />
+        <span>Always revealed</span>
+      </label>
+
       <button
         onClick={generateNumber}
         className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -168,14 +182,14 @@ const ThaiNumbers: React.FC = () => {
       {number !== null && (
         <div className="mt-6 p-6 bg-white rounded-lg shadow text-center w-80">
           <h2 className="text-2xl font-bold text-blue-700 mb-4">{number}</h2>
-          <p className={`mb-2 ${revealed ? "" : "blur-sm"}`}>
+          <p className={`mb-2 ${revealed || showAnswer ? "" : "blur-sm"}`}>
             Thai Numerals: {toThaiNumerals(number)}
           </p>
-          <p className={`mb-2 ${revealed ? "" : "blur-sm"}`}>
+          <p className={`mb-2 ${revealed || showAnswer ? "" : "blur-sm"}`}>
             Pronunciation: {getPronunciation(number)}
           </p>
 
-          {!revealed && (
+          {!revealed && !showAnswer && (
             <button
               onClick={() => setRevealed(true)}
               className="bg-blue-200 hover:bg-blue-300 text-blue-800 px-3 py-1 rounded mt-2"
@@ -184,7 +198,7 @@ const ThaiNumbers: React.FC = () => {
             </button>
           )}
 
-          {revealed && (
+          {(showAnswer || revealed) && (
             <button
               onClick={() => speakThai(number)}
               className="ml-2 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded mt-2"
@@ -196,6 +210,6 @@ const ThaiNumbers: React.FC = () => {
       )}
     </div>
   );
-};
+}
 
 export default ThaiNumbers;

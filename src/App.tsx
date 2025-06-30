@@ -9,6 +9,11 @@ import PlacesQuiz from "./pages/places/quiz";
 import Verbs1Quiz from "./pages/verbs1/quiz";
 import SidebarMenu from "./shared/sidebar-menu";
 import { menuItems } from "./shared/data/data";
+import Adjectives1 from "./pages/adjectives1";
+import Adjectives1Quiz from "./pages/adjectives1/quiz";
+import Comparison from "./pages/comparison";
+import Random1 from "./pages/random1";
+import Random1Quiz from "./pages/random1/quiz";
 
 type Screen =
   | "thaiNumbers20"
@@ -18,7 +23,12 @@ type Screen =
   | "places-test"
   | "pronouns"
   | "verbs1"
-  | "verbs1-quiz";
+  | "verbs1-quiz"
+  | "adjectives1"
+  | "adjectives1-quiz"
+  | "comparison"
+  | "random1"
+  | "random1quiz";
 
 const App: React.FC = () => {
   const [screen, setScreen] = useState<Screen>("thaiNumbers20");
@@ -40,6 +50,11 @@ const App: React.FC = () => {
         {screen === "pronouns" && <Pronouns />}
         {screen === "verbs1" && <Verbs1 />}
         {screen === "verbs1-quiz" && <Verbs1Quiz />}
+        {screen === "adjectives1" && <Adjectives1 />}
+        {screen === "adjectives1-quiz" && <Adjectives1Quiz />}
+        {screen === "comparison" && <Comparison />}
+        {screen === "random1" && <Random1 />}
+        {screen === "random1quiz" && <Random1Quiz />}
       </div>
     </div>
   );

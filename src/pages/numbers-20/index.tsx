@@ -1,5 +1,5 @@
 import React from "react";
-import { numbers0to20, numbers20to100 } from "../../shared/data/data";
+import { numbers0to20 } from "../../shared/data/data";
 
 const playThaiAudio = (thaiText: string) => {
   if ("speechSynthesis" in window) {
