@@ -231,6 +231,8 @@ export const menuItems = [
   { code: "comparison", label: "Comparison" },
   { code: "random1", label: "Random I" },
   { code: "random1quiz", label: "Random I (Quiz)" },
+  { code: "random2", label: "Random II" },
+  { code: "random2quiz", label: "Random II (Quiz)" },
 ];
 
 export const comparisons_examples = [
@@ -327,4 +329,76 @@ export const random1 = [
   { english: "Hear", native: "ได้ยิน", pronunciation: "dâi-yin" },
   { english: "Talk", native: "คุย", pronunciation: "kui" },
   { english: "Play", native: "เล่น", pronunciation: "lên" },
+];
+
+export const random2 = [
+  { english: "I", native: "ผม", pronunciation: "phŏm" },
+  { english: "like", native: "ชอบ", pronunciation: "chôp" },
+  { english: "to work", native: "ทำงาน", pronunciation: "tham-ngaan" },
+  { english: "and", native: "และ", pronunciation: "láe" },
+  { english: "want", native: "อยาก", pronunciation: "yàak" },
+  { english: "to go", native: "ไป", pronunciation: "bpai" },
+  { english: "every day", native: "ทุกวัน", pronunciation: "túk-wan" },
+
+  // Фраза 1: рыба, птица, блондинка
+  { english: "if", native: "ถ้า", pronunciation: "thâa" },
+  { english: "fish", native: "ปลา", pronunciation: "bplaa" },
+  { english: "swim", native: "ว่ายน้ำ", pronunciation: "wâai-náam" },
+  { english: "bird", native: "นก", pronunciation: "nók" },
+  { english: "fly", native: "บิน", pronunciation: "bin" },
+  { english: "girl", native: "สาว", pronunciation: "săao" },
+  { english: "girl 2", native: "เด็กผู้หญิง", pronunciation: "dèk phûu-yĭng" },
+  { english: "blonde hair", native: "ผมบลอนด์", pronunciation: "phŏm-blon" },
+  { english: "blue eyes", native: "ตาฟ้า", pronunciation: "dtaa fáa" },
+  { english: "call me", native: "โทร หา ผม", pronunciation: "toor hăa phŏm" },
+
+  // Фраза 2: причина проблем
+  { english: "reason", native: "สาเหตุ", pronunciation: "săa-hèt" },
+  { english: "problem", native: "ปัญหา", pronunciation: "bpan-hăa" },
+  { english: "all", native: "ทั้งหมด", pronunciation: "tháng-mòt" },
+  { english: "silent", native: "เงียบ", pronunciation: "ngîap" },
+  {
+    english: "for no reason",
+    native: "โดยไม่มีสาเหตุ",
+    pronunciation: "doi mâi mii săa-hèt",
+  },
+  { english: "talk too much", native: "พูดมาก", pronunciation: "phûut mâak" },
+
+  // Фраза 3: смех и зубы
+  {
+    english: "make laugh",
+    native: "ทำให้หัวเราะ",
+    pronunciation: "tham hâi khun hŭa-ró",
+  },
+  {
+    english: "to see",
+    native: "ดู",
+    pronunciation: "doo",
+  },
+  { english: "teeth", native: "ฟัน", pronunciation: "fan" },
+  { english: "still", native: "ยัง", pronunciation: "yang" },
+  { english: "in place", native: "อยู่ครบ", pronunciation: "yùu khróp" },
+
+  // Фраза 4: ложь мужчин
+  { english: "sentence", native: "ประโยค", pronunciation: "bprà-yòok" },
+  { english: "lie", native: "โกหก", pronunciation: "goh-hòk" },
+  { english: "man", native: "ผู้ชาย", pronunciation: "phûu-chaai" },
+  { english: "what", native: "อะไร", pronunciation: "à-rai" },
+  { english: "friend", native: "เพื่อน", pronunciation: "phûean" },
+  { english: "only", native: "แค่", pronunciation: "khâe" },
+  { english: "at home", native: "อยู่บ้าน", pronunciation: "yùu bâan" },
+
+  // Фраза 5: сын, туфли
+  { english: "son", native: "ลูกชาย", pronunciation: "lûuk-chaai" },
+  { english: "show", native: "โชว์", pronunciation: "choo" },
+  { english: "mother", native: "แม่", pronunciation: "mâe" },
+  { english: "the shoes", native: "รองเท้า", pronunciation: "rawng-tháao" },
+  { english: "we", native: "เรา", pronunciation: "rao" },
+  { english: "buy", native: "ซื้อ", pronunciation: "súe" },
+  { english: "together", native: "ด้วยกัน", pronunciation: "dûay-gan" },
+
+  // Фраза 6: перестрелка
+  { english: "meet", native: "เจอ", pronunciation: "jer" },
+  { english: "shooting", native: "การยิงกัน", pronunciation: "gaan-ying-gan" },
+  { english: "restaurant", native: "ร้านอาหาร", pronunciation: "ráan-aa-hăan" },
 ];

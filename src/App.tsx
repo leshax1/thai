@@ -14,6 +14,8 @@ import Adjectives1Quiz from "./pages/adjectives1/quiz";
 import Comparison from "./pages/comparison";
 import Random1 from "./pages/random1";
 import Random1Quiz from "./pages/random1/quiz";
+import Random2 from "./pages/random2";
+import Random2Quiz from "./pages/random2/quiz";
 
 type Screen =
   | "thaiNumbers20"
@@ -28,7 +30,9 @@ type Screen =
   | "adjectives1-quiz"
   | "comparison"
   | "random1"
-  | "random1quiz";
+  | "random1quiz"
+  | "random2"
+  | "random2quiz";
 
 const App: React.FC = () => {
   const [screen, setScreen] = useState<Screen>("thaiNumbers20");
@@ -55,6 +59,8 @@ const App: React.FC = () => {
         {screen === "comparison" && <Comparison />}
         {screen === "random1" && <Random1 />}
         {screen === "random1quiz" && <Random1Quiz />}
+        {screen === "random2" && <Random2 />}
+        {screen === "random2quiz" && <Random2Quiz />}
       </div>
     </div>
   );
